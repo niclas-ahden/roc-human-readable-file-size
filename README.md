@@ -1,7 +1,7 @@
 # roc-human-readable-file-size
 
 Format byte counts as human-readable strings (e.g. `"1.23 kB"`, `"1 KiB"`) in
-Roc. A quite faithful port of the excellent [`elm-human-readable-filesize`](https://package.elm-lang.org/packages/basti1302/elm-human-readable-filesize/latest/).
+Roc. A port of the excellent [`elm-human-readable-filesize`](https://package.elm-lang.org/packages/basti1302/elm-human-readable-filesize/latest/), see [`NOTICE`](NOTICE).
 
 ## Example usage
 
