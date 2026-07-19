@@ -8,7 +8,7 @@ Roc. A port of the excellent [`elm-human-readable-filesize`](https://package.elm
 ```roc
 app [main!] {
     pf: platform "https://github.com/roc-lang/basic-cli/releases/download/0.21.0-rc4/FvCh4vdqm3nBY6DWEfZ8RuGCVfjuMY43HA8KSNk9qVDn.tar.zst",
-    filesize: "https://github.com/niclas-ahden/roc-human-readable-file-size/releases/download/0.1.0/...tar.zst",
+    filesize: "https://github.com/niclas-ahden/roc-human-readable-file-size/releases/download/1.0.0/Uy828KwTg8dVTFdQoWybWPyvXKqSex5QXtL5FDhqWRz.tar.zst",
 }
 
 import pf.Stdout
