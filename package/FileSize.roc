@@ -155,10 +155,10 @@ format_number = |settings, value| {
 floor_to_decimal_places : F64, U64 -> Str
 floor_to_decimal_places = |value, decimal_places|
 	if decimal_places == 0 {
-		value.floor_to_i128().to_str()
+		value.floor_to_i128_try().ok_or(0).to_str()
 	} else {
 		factor = pow10(decimal_places)
-		scaled = (value * factor).floor_to_i128()
+		scaled = (value * factor).floor_to_i128_try().ok_or(0)
 		digits = scaled.to_str()
 		padded = pad_left(digits, decimal_places + 1, "0")
 		len = padded.count_utf8_bytes()
@@ -200,7 +200,7 @@ drop_bytes = |s, n|
 
 strip_trailing_zeros : Str -> Str
 strip_trailing_zeros = |s|
-	match s.find_first(".") {
+	match s.split_first(".") {
 		Err(NotFound) => s
 		Ok({ before, after }) => {
 			stripped = strip_zeros_from_end(after)
@@ -225,7 +225,7 @@ apply_decimal_separator = |s, sep|
 	if sep == "." {
 		s
 	} else {
-		match s.find_first(".") {
+		match s.split_first(".") {
 			Err(NotFound) => s
 			Ok({ before, after }) => "${before}${sep}${after}"
 		}
