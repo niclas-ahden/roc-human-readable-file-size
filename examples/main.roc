@@ -1,5 +1,5 @@
 app [main!] {
-	pf: platform "https://github.com/roc-lang/basic-cli/releases/download/0.21.0-rc4/FvCh4vdqm3nBY6DWEfZ8RuGCVfjuMY43HA8KSNk9qVDn.tar.zst",
+	pf: platform "https://github.com/roc-lang/basic-cli/releases/download/0.26.0/GddgvsGjiNXrHFW6au5i5dUDbTs8FinQdrgE2Gqmw53t.tar.zst",
 	filesize: "../package/main.roc",
 }
 
@@ -12,12 +12,12 @@ main! = |_| {
 
 	_ = Stdout.line!("Decimal:")
 	for n in samples {
-		Stdout.line!("  ${n.to_str()} -> ${FileSize.format(n)}")
+		Stdout.line!("  ${n.to_str()} -> ${FileSize.format(n)}")?
 	}
 
 	_ = Stdout.line!("Binary:")
 	for n in samples {
-		Stdout.line!("  ${n.to_str()} -> ${FileSize.format_binary(n)}")
+		Stdout.line!("  ${n.to_str()} -> ${FileSize.format_binary(n)}")?
 	}
 
 	custom : FileSize.Settings
